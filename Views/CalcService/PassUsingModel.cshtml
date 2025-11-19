@@ -1,0 +1,31 @@
+@model Lab11.Models.NumbersOperations
+
+@{
+    ViewData["Title"] = "PassUsingModel";
+}
+
+<title>@ViewData["Title"]</title>
+
+<h1>@ViewData["Title"]</h1>
+
+<div><strong>Rand Value First :</strong> <strong>@Model.FirstNumber</strong></div>
+<div><strong>Rand Value Second :</strong> <strong>@Model.SecondNumber</strong></div>
+
+<div><strong>Add :</strong></div>
+<div>@Model.FirstNumber + @Model.SecondNumber = @Model.Sum</div>
+
+<div><strong>Sub :</strong></div>
+<div>@Model.FirstNumber - @Model.SecondNumber = @Model.Sub</div>
+
+<div><strong>Mult :</strong></div>
+<div>@Model.FirstNumber * @Model.SecondNumber = @Model.Mult</div>
+
+<div><strong>Div :</strong></div>
+@if (Model.SecondNumber == 0)
+{
+    <div>Division by zero</div>
+}
+else
+{
+    <div>@Model.FirstNumber / @Model.SecondNumber = @Model.Div</div>
+}

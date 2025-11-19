@@ -1,0 +1,32 @@
+@inject Lab11.Services.IGetData GetData
+
+@{
+    var data = GetData.Generate();
+    ViewData["Title"] = "AccessServiceDirectly";
+}
+
+<title>@ViewData["Title"]</title>
+
+<h1>@ViewData["Title"]</h1>
+
+<div><strong>Rand Value First :</strong> <strong>@data.FirstNumber</strong></div>
+<div><strong>Rand Value Second :</strong> <strong>@data.SecondNumber</strong></div>
+
+<div><strong>Add :</strong></div>
+<div>@data.FirstNumber + @data.SecondNumber = @data.Sum</div>
+
+<div><strong>Sub :</strong></div>
+<div>@data.FirstNumber - @data.SecondNumber = @data.Sub</div>
+
+<div><strong>Mult :</strong></div>
+<div>@data.FirstNumber * @data.SecondNumber = @data.Mult</div>
+
+<div><strong>Div :</strong></div>
+@if (data.SecondNumber == 0)
+{
+    <div>Division by zero</div>
+}
+else
+{
+    <div>@data.FirstNumber / @data.SecondNumber = @data.Div</div>
+}

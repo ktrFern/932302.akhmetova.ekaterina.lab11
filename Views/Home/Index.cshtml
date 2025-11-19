@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Calc Service Demonstration</h1>  
+
+<ul class="calc-links">
+    <li>@Html.ActionLink("Using Model Calc", "PassUsingModel", "CalcService")</li>
+    <li>@Html.ActionLink("Using ViewData Calc", "PassUsingViewData", "CalcService")</li>
+    <li>@Html.ActionLink("Using ViewBag Calc", "PassUsingViewBag", "CalcService")</li>
+    <li>@Html.ActionLink("Using Service Injection Calc", "AccessServiceDirectly", "CalcService")</li>
+</ul>
